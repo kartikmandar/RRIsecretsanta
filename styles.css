@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@700&display=swap');
+
+/* General Styles */
+body {
+  font-family: 'Cinzel Decorative', serif;
+  margin: 0;
+  min-height: 100vh;
+  background: url('./assets/harrypotter-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  color: #f8f9fa;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px; /* Add some padding so not too cramped */
+  text-shadow: 1px 1px 2px black;
+  box-sizing: border-box;
+}
+
+.container {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  border: 3px solid #d4af37;
+  box-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
+  color: #ffd700;
+  max-width: 1000px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* Title */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: #d4af37;
+}
+
+/* Instructions and Timer */
+#instructions {
+  font-size: 1.1rem;
+  margin-bottom: 10px;
+}
+
+#timer {
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+/* Grid Styling */
+#grid {
+  display: grid;
+  /* Minimum 150px wide columns, auto-fit to create as many columns as space allows */
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 12px;
+  margin: 20px 0;
+}
+
+/* Word Tile */
+.word-tile {
+  background: #333;
+  padding: 10px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: #ffd700;
+  border: 2px solid #555;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  
+  /* Allow text to wrap and show fully */
+  word-wrap: break-word;
+  white-space: normal;
+  line-height: 1.2;
+}
+
+.word-tile:hover {
+  background-color: #5c5c5c;
+  transform: scale(1.05);
+}
+
+.word-tile.selected {
+  background-color: lightblue;
+  border-color: blue;
+}
+
+.word-tile.correct {
+  background-color: lightgreen;
+  border-color: green;
+}
+
+.word-tile.incorrect {
+  background-color: lightcoral;
+  border-color: red;
+  animation: shake 0.5s ease;
+}
+
+/* Keyframe Animation */
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-5px); }
+  75% { transform: translateX(5px); }
+}
+
+/* Buttons */
+button {
+  margin: 10px;
+  padding: 10px 20px;
+  background-color: #d4af37;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background-color: #b89f35;
+  transform: scale(1.05);
+}
+
+button:disabled {
+  background-color: #666;
+  cursor: not-allowed;
+}
+
+#status {
+  font-size: 1.2rem;
+  margin-top: 15px;
+  color: #d4af37;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+  
+  #instructions, #timer, #status {
+    font-size: 1rem;
+  }
+
+  .word-tile {
+    font-size: 0.85rem;
+    padding: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+  
+  .word-tile {
+    font-size: 0.8rem;
+    padding: 6px;
+  }
+}

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harry Potter Connections Game</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Background Music -->
+  <audio id="background-music" src="./assets/backgroundmusic.mp3" loop></audio>
+
+  <div class="container">
+    <h1>Harry Potter Connections Game</h1>
+    <p id="instructions">Select 10 words that make a connection.</p>
+    <p id="timer">Time Left: <span id="time-left">900</span> seconds</p>
+    <div id="grid"></div>
+    <button id="validate-btn" disabled>Validate Group</button>
+    <p id="status"></p>
+    <button id="restart-btn" style="display: none;">Restart Game</button>
+  </div>
+
+  <!-- Sound Effects -->
+  <audio id="correct-sound" src="./assets/correct.mp3"></audio>
+  <audio id="incorrect-sound" src="./assets/incorrect.mp3"></audio>
+  <audio id="gameover-sound" src="./assets/gameover.mp3"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
