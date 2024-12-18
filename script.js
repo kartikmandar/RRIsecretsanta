@@ -1,6 +1,7 @@
 // Background Music
 const backgroundMusic = document.getElementById("background-music");
 
+
 window.onload = () => {
   document.body.addEventListener("click", () => {
     if (backgroundMusic.paused) {
